@@ -1,0 +1,11 @@
+Seo:
+
+  Search engine position:  
+
+    DmSepKeyword:  
+      name:                   Keyword
+      front:                  false
+    
+    DmSepResult:  
+      name:                 Log
+      front:                false

@@ -1,0 +1,7 @@
+css:
+  dmSepPlugin:
+    log:      sepLog
+
+js:
+  dmSepPlugin:
+    log:      dmSepLog

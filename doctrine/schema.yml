@@ -1,0 +1,22 @@
+DmSepKeyword:  
+  actAs:
+    DmSortable:
+    I18n:
+      fields:           [name, is_active] 
+  columns:  
+    name:               { type: string(255), notnull: true }  
+    is_active:          { type: boolean, notnull: true, default: true }    
+  
+DmSepResult:  
+  actAs:                [ Timestampable ]  
+  columns:  
+    keyword_id:         { type: integer, notnull: true }
+    search_engine:      { type: enum, values: [<?php echo implode(",", sfConfig::get('app_dmSepPlugin_engine')); ?>] }
+    position_current:   { type: integer, notnull: true }
+    position_change:    { type: integer, notnull: true }
+  relations:  
+    Keyword:  
+      class:            DmSepKeyword  
+      local:            keyword_id  
+      foreignAlias:     Keywords  
+      onDelete:         CASCADE

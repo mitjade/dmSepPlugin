@@ -1,0 +1,10 @@
+parameters:
+
+  sep_keywords.class:     dmSepKeywords
+
+services:
+
+  sep_keywords:
+    class:                %sep_keywords.class%
+    shared:               true
+    arguments:            [ @service_container ]

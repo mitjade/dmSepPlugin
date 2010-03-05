@@ -1,0 +1,69 @@
+# to overwrite this parameters, set them in PROJECT_ROOT_DIR/apps/admin/config/app.yml
+all:
+  dmSepPlugin:
+    
+    # rename this to your domain
+    domain:                 www.your-domain.com
+    
+    # you need to run "symfony dm:setup" for this to be re-set
+    engine:                 [ 'aol.com' ]            #'google.com', 'yahoo.com', 'bing.com'
+    
+    settings:
+      0:                     # aol.com           
+        search_engine:      'http://search.aol.com/aol/search?q=pgd&lr=lang_sl&count_override=20&page=' # url to go through result pages
+        reg_exp:            '/a href="([^"]+)" class=l.+?>.+?<\/a>/'                                    # regular expession to find you domain in reslts
+        first_count:        1  # result page starts with
+        increment:          1  # page increment factor
+        prefix:             '' # page prefix
+        suffix:             '' # page suffix
+        num_or_pages:       10 # 200 results parsed
+        
+#      1:                     # google.com    !!!! ANTENTION !!!! - google does not allow parsing result pages, if you make to many requests to google site your IP will be blocked, use aol insted (it uses google serach engine)      
+#        search_engine:      'http://www.google.com/search?num=100&lr=&q=pgd&sa=N&start='
+#        reg_exp:            '/a href="([^"]+)" class=l.+?>.+?<\/a>/'
+#        first_count:        0
+#        increment:          1
+#        prefix:             ''
+#        suffix:             '00'
+#        num_or_pages:       2 # 200 results parsed
+
+#      2:                     # yahoo.com
+#        search_engine:      'http://search.yahoo.com/search?p=%s&n=100&ei=UTF-8&va_vt=any&vo_vt=any&ve_vt=any&vp_vt=any&vd=all&vst=0&vf=all&vm=p&fl=0&fr=sfp&pstart=1&b='
+#        reg_exp:            '/ class="yschttl spt" href="([^"]+)">.+?<\/a>/'
+#        first_count:        1
+#        increment:          1
+#        prefix:             ''
+#        suffix:             '01'
+#        num_or_pages:       2 # 200 parsed
+
+#      3:                     # bing.com
+#        search_engine:      'http://www.bing.com/search?q=%s&filt=all&form=QBRE'
+#        reg_exp:            '/<h3><a href="([^"]+)" onmousedown=".+?">.+?<\/a><\/h3>/'
+#        first_count:        ''
+#        increment:          5
+#        prefix:             '&first='
+#        suffix:             '1'
+#        num_or_pages:       4 # 200 parsed
+#
+#        example for aol
+#        http://search.aol.com/aol/search?q=your-search-keyword&lr=lang_sl&count_override=20&page=1
+#        http://search.aol.com/aol/search?q=your-search-keyword&lr=lang_sl&count_override=20&page=2
+#        http://search.aol.com/aol/search?q=your-search-keyword&lr=lang_sl&count_override=20&page=3
+#        http://search.aol.com/aol/search?q=your-search-keyword&lr=lang_sl&count_override=20&page=4
+#
+#        example for google
+#        http://www.google.com/search?num=100&lr=&q=your-search-keyword&sa=N&start=0
+#        http://www.google.com/search?num=100&lr=&q=your-search-keyword&sa=N&start=100
+#        http://www.google.com/search?num=100&lr=&q=your-search-keyword&sa=N&start=200
+#        http://www.google.com/search?num=100&lr=&q=your-search-keyword&sa=N&start=300
+#
+#        example for yahoo
+#        http://search.yahoo.com/search?p=your-search-keyword&n=100&ei=UTF-8&va_vt=any&vo_vt=any&ve_vt=any&vp_vt=any&vd=all&vst=0&vf=all&vm=p&fl=0&fr=sfp&pstart=1&b=1
+#        http://search.yahoo.com/search?p=your-search-keyword&n=100&ei=UTF-8&va_vt=any&vo_vt=any&ve_vt=any&vp_vt=any&vd=all&vst=0&vf=all&vm=p&fl=0&fr=sfp&pstart=1&b=101
+#        http://search.yahoo.com/search?p=your-search-keyword&n=100&ei=UTF-8&va_vt=any&vo_vt=any&ve_vt=any&vp_vt=any&vd=all&vst=0&vf=all&vm=p&fl=0&fr=sfp&pstart=1&b=201
+#
+#        example for bing
+#        http://www.bing.com/search?q=your-search-keyword&filt=all&form=QBRE
+#        http://www.bing.com/search?q=your-search-keyword&filt=all&FORM=PERE&first=51
+#        http://www.bing.com/search?q=your-search-keyword&filt=all&FORM=PERE&first=101
+#        http://www.bing.com/search?q=your-search-keyword&filt=all&FORM=PORE&first=151
