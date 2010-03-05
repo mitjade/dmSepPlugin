@@ -1,0 +1,1 @@
+<?php echo _media('/dmSepPlugin/images/engine/'.$dm_sep_result->getSearchEngine().'.png'); ?> <?php echo $dm_sep_result->getSearchEngine(); ?>

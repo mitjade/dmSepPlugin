@@ -1,0 +1,45 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: DmSepResult
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: dm_sep_result
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - keyword_id
+          - _search_engine
+          - _position_current
+          - _position_change
+          - created_at
+        sort:
+          - created_at
+          - desc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+        loremize: false
+        actions:
+          _update_all: {  label: "Update", params: title="Update for all keywords" class="sf_admin_action_new sf_admin_action s16 s16_clear" }
+      filter:
+        display:
+          - id
+          - keyword_id
+          - search_engine
+          - position_current
+          - position_change
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [keyword_id, search_engine]
+          Others: [position_current, position_change]
+        class: DmSepResultAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

@@ -1,0 +1,34 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: DmSepKeyword
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: dm_sep_keyword
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=name'
+          - is_active
+          - _update
+        sort:
+          - position
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: true
+        loremize: false
+      filter:
+        display:
+          - name
+      form:
+        display:
+          NONE: [name, is_active]
+        class: DmSepKeywordAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

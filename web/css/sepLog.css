@@ -1,0 +1,16 @@
+.sep16 {
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  height: 16px;
+  padding-left: 18px !important;
+	padding-bottom: 2px !important;
+}
+.sep16_position_up {
+	background-image: url(../images/position-up.png) !important;
+}
+.sep16_position_down {
+	background-image: url(../images/position-down.png) !important;
+}
+.sep16_position_no_change {
+	background-image: url(../images/position-no-change.png) !important;
+}

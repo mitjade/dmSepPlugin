@@ -1,0 +1,1 @@
+<?php if($dm_sep_result->getPositionCurrent() != -1) echo $dm_sep_result->getPositionCurrent(); else echo __('not found'); ?>
